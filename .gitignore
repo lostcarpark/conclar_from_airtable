@@ -1,0 +1,13 @@
+# Exclude development folders.
+/.ddev
+/.vscode
+/composer.lock
+
+# Exclude composer libraries.
+/vendor
+
+# Exclude extracted program/people.
+/extract
+
+# Exclude settings.
+/settings.php
