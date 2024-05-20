@@ -1,13 +1,9 @@
 <?php
 
 require 'vendor/autoload.php';
+require 'settings.php';
 
 use \TANIOS\Airtable\Airtable;
-
-const API_KEY = 'patSndazX1Q8JEsey.1a27ccba1ae99002a2999016e37068b3dd64345a61a6deceb555b1d8f6975487';
-const BASE_ID = 'appF5rlVZwEyEkb64';
-const PROG_ITEMS = 'tblo9woBOKi8ycgrx';
-const PEOPLE = 'tblWyzIJV2f2jAQch';
 
 $conClar = new ConClar();
 $conClar->airTableExtract();
@@ -74,7 +70,7 @@ class ConClar {
         ];
       }
     }
-    file_put_contents('programme.json', json_encode($program));
+    file_put_contents(dirname(__FILE__) . '/' . PROG_FILE, json_encode($program));
   }
 
   protected function peopleExtract() {
@@ -99,6 +95,6 @@ class ConClar {
         ];
       }
     }
-    file_put_contents('people.json', json_encode($people));
+    file_put_contents(dirname(__FILE__) . '/' . PEOPLE_FILE, json_encode($people));
   }
 }
